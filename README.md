@@ -21,7 +21,13 @@ spring.datasource.username=****
 spring.datasource.password=******                    
 
 3. Create databases "patient" and "medicaldata" using following SQL commands and insert record as well:         
-I. 
+I. CREATE TABLE patient (id int not null auto_increment, last_name varchar(255) not null, first_name varchar(255) not null, age int, primary key(id));
+                    
+II. CREATE TABLE medicaldata(id int NOT NULL auto_increment, patient_id int NOT NULL, component_name varchar(255) NOT NULL, component_value varchar(255) NOT NULL, measured_timestamp timestamp default current_timestamp, primary key(id), constraint foreign key(patient_id) references patient(id));           
+
+III. INSERT INTO patient(last_name, first_name, age) VALUES("Mouse", "Mickey", 23), ("Miccain", "John", 20), ("Bravo", "Scubby", 30), ("Fernandos", "Joseph", 24);                   
+        
+IV. INSERT INTO medicaldata(patient_id, component_name, component_value) VALUES(2, "BP", "82/121"), (2,"HeartBeat", "83"), (3, "BP", "87/121"), (3,"HeartBeat", "85"), (4, "BP", "82/124"), (4,"HeartBeat", "90");                   
 
 4. Create Entity classes, "Patient" and "MedicalRecord" that corresponds to the database table "patient" and "medicaldata" respectively. Mark.  
 each classes with JPA annotations. Such as @Entity, @Id, @GeneratedValue(strategy=GenerationType.IDENTITY),         
