@@ -1,9 +1,9 @@
 # HospitalManagement: Clinical Data Reporting System
 
 1. Spring Boot REST serice that facilitates consumer to keep track of Patient's detail and their clinical data.         
-2. Provides two different end-points. One for keeping record of medicalData ("/healthRecords/saveRecord") and another to keep track of patient's details        
+2. Provides two different services. One for keeping record of medicalData ("/healthRecords/saveRecord") and another to keep track of patient's details        
 ("/patient/*").     
-3. Provides the service to calculate "Body Mass Index (BMI)" for the patient and save it in database and retrieve them as needed.                 
+3. Calculate "Body Mass Index (BMI)" for the patient and save it in database and retrieve it as needed.                 
 
 
 ## Tech Stack
